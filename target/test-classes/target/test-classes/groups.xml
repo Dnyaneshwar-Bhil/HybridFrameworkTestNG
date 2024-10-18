@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="master_suite">
+    <listeners>
+        <listener class-name="utilities.ExtentReportManager"/>
+    </listeners>
+
+    <test name="test">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="os" value="windows"/>
+
+        <!-- Correct place for the <groups> tag is inside the <test> tag -->
+        <groups>
+            <run>
+                                <include name="sanity"/>
+                <!--                <include name="regression"/>-->
+<!--                <include name="master"/>-->
+            </run>
+        </groups>
+
+        <classes>
+            <class name="testCases.TC_001_DoRegisterTC"/>
+            <class name="testCases.TC_002_DoLoginTC"/>
+            <class name="testCases.TC_003_LoginDDT"/>
+        </classes>
+    </test>
+
+</suite>
